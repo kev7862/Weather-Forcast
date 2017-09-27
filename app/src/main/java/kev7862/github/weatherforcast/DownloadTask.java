@@ -29,6 +29,13 @@ public class DownloadTask extends AsyncTask<String, Void, String>{
             InputStreamReader reader = new InputStreamReader(in);
             int data = reader.read();
 
+           while (data != -1) {
+               char current = (char) data;
+               results += current;
+               data = reader.read();
+           }
+           return results;
+
         } catch (Exception e) {
             e.printStackTrace();
         }
