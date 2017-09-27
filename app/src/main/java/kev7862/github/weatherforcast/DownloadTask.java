@@ -2,6 +2,9 @@ package kev7862.github.weatherforcast;
 
 import android.os.AsyncTask;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -42,5 +45,20 @@ public class DownloadTask extends AsyncTask<String, Void, String>{
 
 
         return null;
+    }
+
+    @Override
+    protected void onPostExecute(String results) {
+        super.onPostExecute(results);
+
+        //Creating a new JsonObject from results
+
+        try {
+            JSONObject jsonObject = new JSONObject(results);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
     }
 }
