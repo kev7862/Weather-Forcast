@@ -2,6 +2,8 @@ package kev7862.github.weatherforcast;
 
 import android.os.AsyncTask;
 
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -21,6 +23,12 @@ public class DownloadTask extends AsyncTask<String, Void, String>{
 // Throwing an Exception incase we run into an error during connection.
         try {
             url = new URL(urls[0]);
+
+            urlConnection = (HttpURLConnection) url.openConnection();
+            InputStream in = urlConnection.getInputStream();
+            InputStreamReader reader = new InputStreamReader(in);
+            int data = reader.read();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
