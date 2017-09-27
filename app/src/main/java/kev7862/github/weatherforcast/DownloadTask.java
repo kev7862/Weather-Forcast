@@ -55,6 +55,24 @@ public class DownloadTask extends AsyncTask<String, Void, String>{
 
         try {
             JSONObject jsonObject = new JSONObject(results);
+
+            String weatherInfo = jsonObject.getString("weather");
+            JSONObject weatherdatas = new JSONObject(jsonObject.getString("main"));
+
+            double tempInt = Double.parseDouble(weatherdatas.getString("temp"));
+
+            int tempIn = (int) (tempInt*1.8-459.67);
+
+
+
+
+            
+
+
+
+
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }
