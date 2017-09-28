@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         placeTextView = (TextView)findViewById(R.id.placeText);
         temperatureTextView = (TextView)findViewById(R.id.tempText);
 
+
         //This is where we download the users location
 
         LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);

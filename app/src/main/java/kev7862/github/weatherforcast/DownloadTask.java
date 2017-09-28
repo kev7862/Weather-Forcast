@@ -70,14 +70,8 @@ public class DownloadTask extends AsyncTask<String, Void, String>{
             String placeName = jsonObject.getString("name");
 
 
-
-
-
-            
-
-
-
-
+            MainActivity.temperatureTextView.setText(String.valueOf(temperatureInteger));
+            MainActivity.placeTextView.setText(String.valueOf(placeName));
 
 
         } catch (Exception e) {
