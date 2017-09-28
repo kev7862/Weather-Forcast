@@ -15,10 +15,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import static kev7862.github.weatherforcast.R.id.fab;
 
 public class MainActivity extends AppCompatActivity {
+
+    static TextView placeTextView;
+    static TextView temperatureTextView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        placeTextView = (TextView)findViewById(R.id.placeText);
+        temperatureTextView = (TextView)findViewById(R.id.tempText);
 
         //This is where we download the users location
 
