@@ -18,12 +18,14 @@ import java.net.URL;
 //This is where we download the webpage data.
 public class DownloadTask extends AsyncTask<String, Void, String>{
 
-    String results = "";
-    URL url;
-    HttpURLConnection urlConnection = null;
 
     @Override
     protected String doInBackground(String... urls) {
+
+        String results = "";
+        URL url;
+        HttpURLConnection urlConnection = null;
+
 // Throwing an Exception incase we run into an error during connection.
         try {
             url = new URL(urls[0]);
