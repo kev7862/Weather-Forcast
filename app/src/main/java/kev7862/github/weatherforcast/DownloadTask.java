@@ -2,6 +2,7 @@ package kev7862.github.weatherforcast;
 
 import android.os.AsyncTask;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -56,12 +57,16 @@ public class DownloadTask extends AsyncTask<String, Void, String>{
         try {
             JSONObject jsonObject = new JSONObject(results);
 
-            String weatherInfo = jsonObject.getString("weather");
-            JSONObject weatherdatas = new JSONObject(jsonObject.getString("main"));
+            JSONObject weatherdata = new JSONObject(jsonObject.getString("main"));
 
-            double tempInt = Double.parseDouble(weatherdatas.getString("temp"));
+            Double temperature = Double.parseDouble(weatherdata.getString("temp"));
+            //converting degrees from Kelvin to Farenheit.
+            int temperatureInteger = (int) (temperature * 1.8-459.67);
 
-            int tempIn = (int) (tempInt*1.8-459.67);
+            // Indicating the users location
+
+            String placeName = jsonObject.getString("name");
+
 
 
 
