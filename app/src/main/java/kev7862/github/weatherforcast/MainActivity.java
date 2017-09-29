@@ -58,10 +58,10 @@ public class MainActivity extends AppCompatActivity {
          Double lat = location.getLatitude();
          Double lon = location.getLongitude();
 
-
+// This is where we download yhe users location
         DownloadTask task = new DownloadTask();
 
-        task.execute("http://api.openweathermap.org/data/2.5/weather?lat=" + String.valueOf(lat) + "&lon=" + String.valueOf(lon) + "&appid=7740d29837c92e0b8e4b6929fcda085a");
+        task.execute("http://api.openweathermap.org/data/2.5/weather?lat=" + String.valueOf(lat) + "&lon=" + String.valueOf(lon) + "&appid=c321186b00b05439884c711d70b9d772");
 
 
 

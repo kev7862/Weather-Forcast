@@ -18,7 +18,7 @@ import java.net.URL;
 //This is where we download the webpage data.
 public class DownloadTask extends AsyncTask<String, Void, String>{
 
-
+// This is the URl the user inputs
     @Override
     protected String doInBackground(String... urls) {
 
@@ -34,7 +34,7 @@ public class DownloadTask extends AsyncTask<String, Void, String>{
             InputStream in = urlConnection.getInputStream();
             InputStreamReader reader = new InputStreamReader(in);
             int data = reader.read();
-
+// When data finishes reading its gonna be equals to -1, so we create a while loop that runs while data is not equal to -1.
            while (data != -1) {
                char current = (char) data;
                results += current;
