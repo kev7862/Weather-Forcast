@@ -65,6 +65,7 @@ public class DownloadTask extends AsyncTask<String, Void, String>{
             //converting degrees from Kelvin to Farenheit.
             int temperatureInteger = (int) (temperature * 1.8-459.67);
 
+
             // Indicating the users location
 
             String placeName = jsonObject.getString("name");

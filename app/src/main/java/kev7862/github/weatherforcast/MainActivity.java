@@ -56,12 +56,12 @@ public class MainActivity extends AppCompatActivity {
 
         //getting the users latitude and longitude
          Double lat = location.getLatitude();
-         Double lng = location.getLongitude();
+         Double lon = location.getLongitude();
 
 
         DownloadTask task = new DownloadTask();
 
-        task.execute("http://api.openweathermap.org/data/2.5/weather?lat=" + String.valueOf(lat) + "&lon=" + String.valueOf(lng) + "&appid=7740d29837c92e0b8e4b6929fcda085a");
+        task.execute("http://api.openweathermap.org/data/2.5/weather?lat=" + String.valueOf(lat) + "&lon=" + String.valueOf(lon) + "&appid=7740d29837c92e0b8e4b6929fcda085a");
 
 
 
